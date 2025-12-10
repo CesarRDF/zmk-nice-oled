@@ -16,7 +16,7 @@ LV_IMG_DECLARE(crystal_06);
 LV_IMG_DECLARE(crystal_07);
 LV_IMG_DECLARE(crystal_08);
 LV_IMG_DECLARE(crystal_09);
-LV_IMG_DECLARE(crystal_10);
+LV_IMG_DECLARE(crystal_10);l
 LV_IMG_DECLARE(crystal_11);
 LV_IMG_DECLARE(crystal_12);
 // LV_IMG_DECLARE(crystal_13);
@@ -81,7 +81,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     art = lv_animimg_create(widget->obj);
     lv_obj_center(art);
 
-    lv_animimg_set_src(art, (const void **)crystal_imgs, 16);
+    lv_animimg_set_src(art, (const void **)crystal_imgs, 13);
     lv_animimg_set_duration(art, CONFIG_NICE_OLED_GEM_ANIMATION_MS);
     lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
     lv_animimg_start(art);
@@ -130,7 +130,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     if (art) {
 #if IS_ENABLED(CONFIG_NICE_OLED_GEM_ANIMATION)
         /* coordinate adjustment if it was Gem animation */
-        lv_obj_align(art, LV_ALIGN_TOP_LEFT, 18, -18);
+        lv_obj_align(art, LV_ALIGN_TOP_LEFT, 30, 4);
 #elif IS_ENABLED(CONFIG_NICE_OLED_POKEMON_ANIMATION)
         /* coordinate adjustment if it was the Pokémon animation */
         lv_obj_align(art, LV_ALIGN_TOP_LEFT, -40, -18);
