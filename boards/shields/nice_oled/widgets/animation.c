@@ -19,15 +19,15 @@ LV_IMG_DECLARE(crystal_09);
 LV_IMG_DECLARE(crystal_10);
 LV_IMG_DECLARE(crystal_11);
 LV_IMG_DECLARE(crystal_12);
-// LV_IMG_DECLARE(crystal_13);
-// LV_IMG_DECLARE(crystal_14);
-// LV_IMG_DECLARE(crystal_15);
-// LV_IMG_DECLARE(crystal_16);
+LV_IMG_DECLARE(crystal_13);
+LV_IMG_DECLARE(crystal_14);
+LV_IMG_DECLARE(crystal_15);
+LV_IMG_DECLARE(crystal_16);
 
 const lv_img_dsc_t *crystal_imgs[] = {
     &crystal_01, &crystal_02, &crystal_03, &crystal_04, &crystal_05, &crystal_06,
     &crystal_07, &crystal_08, &crystal_09, &crystal_10, &crystal_11, &crystal_12,
-    // &crystal_13, &crystal_14, &crystal_15, &crystal_16,
+    &crystal_13, &crystal_14, &crystal_15, &crystal_16,
 };
 
 // CONFIG_NICE_OLED_POKEMON_ANIMATION
@@ -59,6 +59,48 @@ const lv_img_dsc_t *pokemon_imgs[] = {
     &pokemon15, &pokemon16, &pokemon17, &pokemon18, &pokemon19, &pokemon20,
 };
 
+// CONFIG_NICE_OLED_KIRBY_ANIMATION
+// 01 to 31
+LV_IMG_DECLARE(kirby_0);
+LV_IMG_DECLARE(kirby_1);
+LV_IMG_DECLARE(kirby_2);
+LV_IMG_DECLARE(kirby_3);
+LV_IMG_DECLARE(kirby_4);
+LV_IMG_DECLARE(kirby_5);
+LV_IMG_DECLARE(kirby_6);
+LV_IMG_DECLARE(kirby_7);
+LV_IMG_DECLARE(kirby_8);
+LV_IMG_DECLARE(kirby_9);
+LV_IMG_DECLARE(kirby_10);
+LV_IMG_DECLARE(kirby_11);
+LV_IMG_DECLARE(kirby_12);
+LV_IMG_DECLARE(kirby_13);
+LV_IMG_DECLARE(kirby_14);
+LV_IMG_DECLARE(kirby_15);
+LV_IMG_DECLARE(kirby_16);
+LV_IMG_DECLARE(kirby_17);
+LV_IMG_DECLARE(kirby_18);
+LV_IMG_DECLARE(kirby_19);
+LV_IMG_DECLARE(kirby_20);
+LV_IMG_DECLARE(kirby_21);
+LV_IMG_DECLARE(kirby_22);
+LV_IMG_DECLARE(kirby_23);
+LV_IMG_DECLARE(kirby_24);
+LV_IMG_DECLARE(kirby_25);
+LV_IMG_DECLARE(kirby_26);
+LV_IMG_DECLARE(kirby_27);
+LV_IMG_DECLARE(kirby_28);
+LV_IMG_DECLARE(kirby_29);
+LV_IMG_DECLARE(kirby_30);
+LV_IMG_DECLARE(kirby_31);
+
+const lv_img_dsc_t *kirby_imgs[] = {
+    &kirby_0, &kirby_1, &kirby_2, &kirby_3, &kirby_4, &kirby_5, &kirby_6,&kirby_7, &kirby_8, &kirby_9, &kirby_10,
+    &kirby_11, &kirby_12, &kirby_13, &kirby_14, &kirby_15, &kirby_16, &kirby_17, &kirby_18, &kirby_19, &kirby_20,
+    &kirby_21, &kirby_22, &kirby_23, &kirby_24, &kirby_25, &kirby_26, &kirby_27, &kirby_28, &kirby_29, &kirby_30,
+    &kirby_31,
+};
+
 // CONFIG_NICE_OLED_VIM
 LV_IMG_DECLARE(vim);
 #define FIXED_IMAGE_1 &vim
@@ -81,7 +123,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     art = lv_animimg_create(widget->obj);
     lv_obj_center(art);
 
-    lv_animimg_set_src(art, (const void **)crystal_imgs, 12);
+    lv_animimg_set_src(art, (const void **)crystal_imgs, 16);
     lv_animimg_set_duration(art, CONFIG_NICE_OLED_GEM_ANIMATION_MS);
     lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
     lv_animimg_start(art);
@@ -92,6 +134,16 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     lv_obj_center(art);
 
     lv_animimg_set_src(art, (const void **)pokemon_imgs, 20);
+    lv_animimg_set_duration(art, CONFIG_NICE_OLED_POKEMON_ANIMATION_MS);
+    lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
+    lv_animimg_start(art);
+
+#elif IS_ENABLED(CONFIG_NICE_OLED_KIRBY_ANIMATION)
+    /* If we have the Pokémon animation enabled */
+    art = lv_animimg_create(widget->obj);
+    lv_obj_center(art);
+
+    lv_animimg_set_src(art, (const void **)kirby_imgs, 31);
     lv_animimg_set_duration(art, CONFIG_NICE_OLED_POKEMON_ANIMATION_MS);
     lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
     lv_animimg_start(art);
@@ -130,10 +182,13 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     if (art) {
 #if IS_ENABLED(CONFIG_NICE_OLED_GEM_ANIMATION)
         /* coordinate adjustment if it was Gem animation */
-        lv_obj_align(art, LV_ALIGN_TOP_LEFT, 30, 4);
+        lv_obj_align(art, LV_ALIGN_TOP_LEFT, 18, -18);
 #elif IS_ENABLED(CONFIG_NICE_OLED_POKEMON_ANIMATION)
         /* coordinate adjustment if it was the Pokémon animation */
         lv_obj_align(art, LV_ALIGN_TOP_LEFT, -40, -18);
+#elif IS_ENABLED(CONFIG_NICE_OLED_KIRBY_ANIMATION)
+        /* coordinate adjustment if it was the Pokémon animation */
+        lv_obj_align(art, LV_ALIGN_TOP_LEFT, 30, 4);
 #else
         /* Fixed image adjustment */
         lv_obj_align(art, LV_ALIGN_TOP_LEFT, 18, -18);
