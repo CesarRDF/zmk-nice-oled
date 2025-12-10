@@ -16,7 +16,7 @@ LV_IMG_DECLARE(crystal_06);
 LV_IMG_DECLARE(crystal_07);
 LV_IMG_DECLARE(crystal_08);
 LV_IMG_DECLARE(crystal_09);
-LV_IMG_DECLARE(crystal_10);l
+LV_IMG_DECLARE(crystal_10);
 LV_IMG_DECLARE(crystal_11);
 LV_IMG_DECLARE(crystal_12);
 // LV_IMG_DECLARE(crystal_13);
