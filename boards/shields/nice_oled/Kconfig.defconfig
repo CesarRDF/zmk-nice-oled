@@ -63,6 +63,14 @@ config NICE_OLED_POKEMON_ANIMATION_MS
     int "Animation length in milliseconds"
     default 4800
 
+config NICE_OLED_KIRBY_ANIMATION
+    bool "Enable Kirby Animation"
+    default n
+
+config NICE_OLED_KIRBY_ANIMATION_MS
+    int "Animation length in milliseconds"
+    default 1400
+
 config NICE_OLED_VIM
     bool "Enable static vim on peripheral"
     default n
