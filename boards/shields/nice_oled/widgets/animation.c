@@ -95,10 +95,15 @@ LV_IMG_DECLARE(kirby_30);
 LV_IMG_DECLARE(kirby_31);
 
 const lv_img_dsc_t *kirby_imgs[] = {
+    
     &kirby_0, &kirby_1, &kirby_2, &kirby_3, &kirby_4, &kirby_5, &kirby_6,&kirby_7, &kirby_8, &kirby_9, &kirby_10,
     &kirby_11, &kirby_12, &kirby_13, &kirby_14, &kirby_15, &kirby_16, &kirby_17, &kirby_18, &kirby_19, &kirby_20,
     &kirby_21, &kirby_22, &kirby_23, &kirby_24, &kirby_25, &kirby_26, &kirby_27, &kirby_28, &kirby_29, &kirby_30,
     &kirby_31,
+    // --- PAUSA VISUAL (Frames repetidos) ---
+    &kirby_31, &kirby_31, &kirby_31, &kirby_31, &kirby_31, 
+    &kirby_31, &kirby_31, &kirby_31, &kirby_31, &kirby_31
+
 };
 
 // CONFIG_NICE_OLED_VIM
@@ -143,7 +148,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     art = lv_animimg_create(widget->obj);
     lv_obj_center(art);
 
-    lv_animimg_set_src(art, (const void **)kirby_imgs, 31);
+    lv_animimg_set_src(art, (const void **)kirby_imgs, 42);
     lv_animimg_set_duration(art, CONFIG_NICE_OLED_KIRBY_ANIMATION_MS);
     lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
     lv_animimg_start(art);
