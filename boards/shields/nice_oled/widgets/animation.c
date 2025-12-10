@@ -81,7 +81,7 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
     art = lv_animimg_create(widget->obj);
     lv_obj_center(art);
 
-    lv_animimg_set_src(art, (const void **)crystal_imgs, 13);
+    lv_animimg_set_src(art, (const void **)crystal_imgs, 12);
     lv_animimg_set_duration(art, CONFIG_NICE_OLED_GEM_ANIMATION_MS);
     lv_animimg_set_repeat_count(art, LV_ANIM_REPEAT_INFINITE);
     lv_animimg_start(art);
