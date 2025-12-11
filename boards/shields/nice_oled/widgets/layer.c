@@ -4,6 +4,7 @@
 #include <ctype.h> // Para toupper()
 #include <stdio.h> // Necesario para snprintf
 #include <zephyr/kernel.h>
+#include <lvgl.h>
 
 // // MC: better implementation
 // void draw_layer_status(lv_obj_t *canvas, const struct status_state *state) {

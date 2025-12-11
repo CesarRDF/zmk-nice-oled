@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <zephyr/kernel.h>
 #include "util.h"
+#include <lvgl.h>
 
 LV_IMG_DECLARE(profiles);
 

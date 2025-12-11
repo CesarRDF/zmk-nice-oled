@@ -17,6 +17,8 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #include "modifiers.h"
 
+#include <lvgl.h>
+
 struct modifiers_state {
   uint8_t modifiers;
 };

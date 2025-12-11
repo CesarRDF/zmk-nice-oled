@@ -1,6 +1,7 @@
 #include "output.h"
 #include "../assets/custom_fonts.h"
 #include <zephyr/kernel.h>
+#include <lvgl.h>
 
 LV_IMG_DECLARE(bt_no_signal);
 LV_IMG_DECLARE(bt_unbonded);

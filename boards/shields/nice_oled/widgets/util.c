@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <zephyr/kernel.h>
 #include <string.h>
+#include <lvgl.h>
 
 void to_uppercase(char *str) {
   for (int i = 0; str[i] != '\0'; i++) {
@@ -14,10 +15,12 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
   memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
 
   lv_image_dsc_t img;
-  img.data = LV_IMAGE_HEADER_MAGIC;
+  img.header.magic = LV_IMAGE_HEADER_MAGIC;
   img.header.cf = LV_COLOR_FORMAT_NATIVE;
   img.header.w = CANVAS_HEIGHT;
   img.header.h = CANVAS_HEIGHT;
+  img.header.stride = CANVAS_HEIGHT * sizeof(lv_color_t); 
+  img.header.reserved_2 = 0;
 
   // lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
   // lv_canvas_transform(canvas, &img, 900, LV_IMG_ZOOM_NONE, -1, 0,

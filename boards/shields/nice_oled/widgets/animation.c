@@ -5,6 +5,7 @@
 // #include "battery.h"
 #include <stdlib.h>
 #include <zephyr/kernel.h>
+#include <lvgl.h>
 
 // // CONFIG_NICE_OLED_GEM_ANIMATION
 // LV_IMG_DECLARE(crystal_01);

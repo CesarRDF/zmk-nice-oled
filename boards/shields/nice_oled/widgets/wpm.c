@@ -164,6 +164,7 @@
 #include <math.h>
 #include <stdio.h> // Necesario para snprintf
 #include <zephyr/kernel.h>
+#include <lvgl.h>
 
 // LVGL 9 prefiere LV_IMAGE_DECLARE, pero mantenemos compatibilidad si es posible
 LV_IMG_DECLARE(gauge);
