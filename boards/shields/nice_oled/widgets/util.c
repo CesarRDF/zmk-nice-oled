@@ -11,15 +11,17 @@ void to_uppercase(char *str) {
 }
 
 void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
-  static lv_color_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT];
+  //static lv_color_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT];
+  static uint8_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT / 8];
   memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
 
   lv_image_dsc_t img;
   img.header.magic = LV_IMAGE_HEADER_MAGIC;
-  img.header.cf = LV_COLOR_FORMAT_NATIVE;
+  img.header.cf = LV_COLOR_FORMAT_I1;
   img.header.w = CANVAS_HEIGHT;
   img.header.h = CANVAS_HEIGHT;
-  img.header.stride = CANVAS_HEIGHT * sizeof(lv_color_t); 
+  img.header.stride = (CANVAS_HEIGHT + 7) / 8; // Stride en bytes para 1 bit
+  //img.header.stride = CANVAS_HEIGHT * sizeof(lv_color_t); 
   img.header.reserved_2 = 0;
 
   // lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
