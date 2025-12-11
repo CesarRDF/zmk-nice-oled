@@ -30,10 +30,10 @@ LV_IMG_DECLARE(dog_bark1_90);
 LV_IMG_DECLARE(dog_bark2_90);
 
 /* Arreglo de pointers a los frames de "Luna" (definidos en luna.c) */
-// const lv_img_dsc_t *luna_imgs_bark_90[] = {&dog_sit1, &dog_sit2,  &dog_walk1,
+// const lv_image_dsc_t *luna_imgs_bark_90[] = {&dog_sit1, &dog_sit2,  &dog_walk1,
 // &dog_walk2, &dog_run1, &dog_run2, &dog_bark1, &dog_bark2, &dog_sneak1,
 // &dog_sneak2};
-const lv_img_dsc_t *luna_imgs_bark_90[] = {&dog_bark1_90, &dog_bark2_90};
+const lv_image_dsc_t *luna_imgs_bark_90[] = {&dog_bark1_90, &dog_bark2_90};
 static lv_obj_t *hid_anim =
     NULL; // Variable estática para almacenar el objeto animado
 

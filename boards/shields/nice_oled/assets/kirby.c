@@ -50,8 +50,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_0 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_0 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_0 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -106,8 +106,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_1 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_1 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_1 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -162,8 +162,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_2 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_2 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_2 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -218,8 +218,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_3 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_3 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_3 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -274,8 +274,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_4 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_4 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_4 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -330,8 +330,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_5 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_5 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_5 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -386,8 +386,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_6 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_6 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_6 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -442,8 +442,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_7 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_7 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_7 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -498,8 +498,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_8 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_8 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_8 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -554,8 +554,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_9 u
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_9 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_9 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -610,8 +610,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_10 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_10 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_10 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -666,8 +666,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_11 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_11 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_11 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -722,8 +722,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_12 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_12 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_12 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -778,8 +778,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_13 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_13 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_13 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -834,8 +834,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_14 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_14 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_14 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -890,8 +890,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_15 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_15 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_15 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -950,8 +950,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_16 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_16 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_16 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1006,8 +1006,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_17 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_17 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_17 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1062,8 +1062,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_18 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_18 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_18 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1118,8 +1118,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_19 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_19 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_19 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1174,8 +1174,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_20 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_20 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_20 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1230,8 +1230,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_21 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_21 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_21 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1286,8 +1286,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_22 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_22 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_22 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1342,8 +1342,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_23 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_23 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_23 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1398,8 +1398,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_24 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_24 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_24 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1454,8 +1454,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_25 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_25 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_25 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1510,8 +1510,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_26 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_26 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_26 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1566,8 +1566,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_27 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_27 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_27 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1622,8 +1622,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_28 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_28 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_28 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1678,8 +1678,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_29 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_29 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_29 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1734,8 +1734,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_30 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_30 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_30 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
@@ -1790,8 +1790,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_KIRBY_31 
   0x00, 0x00, 0x00, 
 };
 
-const lv_img_dsc_t kirby_31 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+const lv_image_dsc_t kirby_31 = {
+  .header.cf = LV_COLOR_FORMAT_I1,
   .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 24,
