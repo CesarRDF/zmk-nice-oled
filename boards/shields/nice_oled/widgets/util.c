@@ -14,7 +14,7 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
   memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
 
   lv_image_dsc_t img;
-  img.data = (LV_IMAGE_HEADER_MAGIC;
+  img.data = LV_IMAGE_HEADER_MAGIC;
   img.header.cf = LV_COLOR_FORMAT_NATIVE;
   img.header.w = CANVAS_HEIGHT;
   img.header.h = CANVAS_HEIGHT;
@@ -58,7 +58,7 @@ void draw_background(lv_obj_t *canvas) {
 
   // lv_canvas_draw_rect(canvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT,
   //                     &rect_black_dsc);
-  
+
   // LVGL 9: No usamos lv_canvas_draw_rect, usamos lv_draw_rect sobre la capa
     lv_layer_t *layer = lv_canvas_get_layer(canvas);
 
