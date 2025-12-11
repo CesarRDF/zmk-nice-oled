@@ -171,7 +171,8 @@ static void animation_smart_battery_off(lv_obj_t *canvas) {
 #endif
 
 static void draw_level(lv_obj_t *canvas, const struct status_state *state) {
-    lv_layer_t *layer = lv_canvas_get_layer(canvas);
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     lv_draw_label_dsc_t label_dsc;
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &pixel_operator_mono, LV_TEXT_ALIGN_LEFT);
@@ -189,11 +190,12 @@ static void draw_level(lv_obj_t *canvas, const struct status_state *state) {
     coords.x2 = 42;
     coords.y2 = 70; // Altura estimada
 
-    lv_draw_label(layer, &label_dsc, &coords);
+    lv_draw_label(&layer, &label_dsc, &coords);
 }
 
 static void draw_charging_level(lv_obj_t *canvas, const struct status_state *state) {
-    lv_layer_t *layer = lv_canvas_get_layer(canvas);
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     // --- DIBUJAR TEXTO ---
     lv_draw_label_dsc_t label_dsc;
@@ -210,7 +212,7 @@ static void draw_charging_level(lv_obj_t *canvas, const struct status_state *sta
     text_coords.x2 = 35;
     text_coords.y2 = 70;
 
-    lv_draw_label(layer, &label_dsc, &text_coords);
+    lv_draw_label(&layer, &label_dsc, &text_coords);
 
     // --- DIBUJAR RAYO (BOLT) ---
     lv_draw_image_dsc_t img_dsc;

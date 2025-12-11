@@ -174,7 +174,8 @@ LV_IMG_DECLARE(grid);
  * HELPER: Dibujar imagen en LVGL 9
  * ------------------------------------------------------------------------- */
 static void draw_image_on_canvas(lv_obj_t *canvas, const lv_image_dsc_t *img_src, int x, int y) {
-    lv_layer_t *layer = lv_canvas_get_layer(canvas);
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
     
     lv_draw_image_dsc_t img_dsc;
     lv_draw_image_dsc_init(&img_dsc);
@@ -187,7 +188,7 @@ static void draw_image_on_canvas(lv_obj_t *canvas, const lv_image_dsc_t *img_src
     coords.x2 = x + img_src->header.w - 1;
     coords.y2 = y + img_src->header.h - 1;
 
-    lv_draw_image(layer, &img_dsc, &coords);
+    lv_draw_image(&layer, &img_dsc, &coords);
 }
 
 /* -------------------------------------------------------------------------
@@ -196,11 +197,12 @@ static void draw_image_on_canvas(lv_obj_t *canvas, const lv_image_dsc_t *img_src
 
 static void draw_gauge(lv_obj_t *canvas, const struct status_state *state) {
     // Reemplaza lv_canvas_draw_img
-    draw_image_on_canvas(canvas, &gauge, 0, 70);
+    draw_image_on_canvas(&canvas, &gauge, 0, 70);
 }
 
 static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
-    lv_layer_t *layer = lv_canvas_get_layer(canvas);
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     // Configurar estilo de línea
     lv_draw_line_dsc_t line_dsc;
@@ -239,7 +241,7 @@ static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
     line_dsc.p2.y = centerY + (int)(radius * sin(angleRad));
 
     // Dibujar línea única
-    lv_draw_line(layer, &line_dsc);
+    lv_draw_line(&layer, &line_dsc);
 }
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM_LUNA)
@@ -250,7 +252,8 @@ static void draw_grid(lv_obj_t *canvas) {
 }
 
 static void draw_graph(lv_obj_t *canvas, const struct status_state *state) {
-    lv_layer_t *layer = lv_canvas_get_layer(canvas);
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     lv_draw_line_dsc_t line_dsc;
     lv_draw_line_dsc_init(&line_dsc);
@@ -293,13 +296,14 @@ static void draw_graph(lv_obj_t *canvas, const struct status_state *state) {
     for (int i = 0; i < 9; i++) {
         line_dsc.p1 = points[i];
         line_dsc.p2 = points[i+1];
-        lv_draw_line(layer, &line_dsc);
+        lv_draw_line(&layer, &line_dsc);
     }
 }
 #endif
 
 static void draw_label(lv_obj_t *canvas, const struct status_state *state) {
-    lv_layer_t *layer = lv_canvas_get_layer(canvas);
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     // Configurar etiqueta
     lv_draw_label_dsc_t label_dsc;
@@ -331,7 +335,7 @@ static void draw_label(lv_obj_t *canvas, const struct status_state *state) {
     coords.x2 = x_pos + 50; // Ancho estimado suficiente
     coords.y2 = 75 + 20;    // Alto estimado
 
-    lv_draw_label(layer, &label_dsc, &coords);
+    lv_draw_label(&layer, &label_dsc, &coords);
 }
 
 void draw_wpm_status(lv_obj_t *canvas, const struct status_state *state) {

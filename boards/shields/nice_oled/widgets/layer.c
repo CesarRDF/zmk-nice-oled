@@ -37,7 +37,8 @@
 
 void draw_layer_status(lv_obj_t *canvas, const struct status_state *state) {
     // 1. Obtener la capa del canvas (LVGL 9)
-    lv_layer_t *layer = lv_canvas_get_layer(canvas);
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     // 2. Configurar el estilo del texto
     lv_draw_label_dsc_t label_dsc;
@@ -72,5 +73,5 @@ void draw_layer_status(lv_obj_t *canvas, const struct status_state *state) {
     coords.y2 = 146 + 20; // Altura estimada de la fuente
 
     // 6. Dibujar
-    lv_draw_label(layer, &label_dsc, &coords);
+    lv_draw_label(&layer, &label_dsc, &coords);
 }

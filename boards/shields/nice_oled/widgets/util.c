@@ -33,7 +33,8 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
   lv_canvas_fill_bg(canvas, lv_color_hex(0x000000), LV_OPA_COVER);
 
   // 4. Obtener la capa del canvas para dibujar (LVGL 9 way)
-  lv_layer_t *layer = lv_canvas_get_layer(canvas);
+  lv_layer_t layer;
+  lv_canvas_init_layer(canvas, &layer);
 
   // 5. Configurar el dibujado con rotación
   lv_draw_image_dsc_t draw_dsc;
@@ -52,7 +53,7 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
   coords.x2 = CANVAS_HEIGHT - 1;
   coords.y2 = CANVAS_HEIGHT - 1;
 
-  lv_draw_image(layer, &draw_dsc, &coords);
+  lv_draw_image(&layer, &draw_dsc, &coords);
 }
 
 void draw_background(lv_obj_t *canvas) {
@@ -63,7 +64,8 @@ void draw_background(lv_obj_t *canvas) {
   //                     &rect_black_dsc);
 
   // LVGL 9: No usamos lv_canvas_draw_rect, usamos lv_draw_rect sobre la capa
-    lv_layer_t *layer = lv_canvas_get_layer(canvas);
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     lv_draw_rect_dsc_t rect_black_dsc;
     init_rect_dsc(&rect_black_dsc, lv_color_black()); // Usar helper de color
@@ -74,7 +76,7 @@ void draw_background(lv_obj_t *canvas) {
     coords.x2 = CANVAS_WIDTH - 1;  // Importante restar 1
     coords.y2 = CANVAS_HEIGHT - 1;
 
-    lv_draw_rect(layer, &rect_black_dsc, &coords);
+    lv_draw_rect(&layer, &rect_black_dsc, &coords);
 }
 
 void init_label_dsc(lv_draw_label_dsc_t *label_dsc, lv_color_t color,

@@ -79,7 +79,8 @@ LV_IMG_DECLARE(usb);
 // }
 
 static void draw_icon(lv_obj_t *canvas, const lv_image_dsc_t *img_src, int x, int y) {
-    lv_layer_t *layer = lv_canvas_get_layer(canvas);
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
     
     lv_draw_image_dsc_t img_dsc;
     lv_draw_image_dsc_init(&img_dsc);
@@ -93,7 +94,7 @@ static void draw_icon(lv_obj_t *canvas, const lv_image_dsc_t *img_src, int x, in
     coords.x2 = x + img_src->header.w - 1;
     coords.y2 = y + img_src->header.h - 1;
 
-    lv_draw_image(layer, &img_dsc, &coords);
+    lv_draw_image(&layer, &img_dsc, &coords);
 }
 
 #if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)

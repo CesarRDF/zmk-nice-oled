@@ -16,7 +16,8 @@ static void draw_inactive_profiles(lv_obj_t *canvas,
   // lv_canvas_draw_img(canvas, 0, 137, &profiles, &img_dsc);
   // // lv_canvas_draw_img(canvas, 18, 129, &profiles, &img_dsc);
 
-  lv_layer_t *layer = lv_canvas_get_layer(canvas);
+  lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     lv_draw_image_dsc_t img_dsc;
     lv_draw_image_dsc_init(&img_dsc);
@@ -30,7 +31,7 @@ static void draw_inactive_profiles(lv_obj_t *canvas,
     coords.x2 = 0 + profiles.header.w - 1;
     coords.y2 = 137 + profiles.header.h - 1;
 
-    lv_draw_image(layer, &img_dsc, &coords);
+    lv_draw_image(&layer, &img_dsc, &coords);
 }
 
 static void draw_active_profile(lv_obj_t *canvas,
@@ -43,7 +44,8 @@ static void draw_active_profile(lv_obj_t *canvas,
   // lv_canvas_draw_rect(canvas, 0 + offset, 137, 3, 3, &rect_white_dsc);
   // // lv_canvas_draw_rect(canvas, 18 + offset, 129, 3, 3, &rect_white_dsc);
 
-  lv_layer_t *layer = lv_canvas_get_layer(canvas);
+  lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     lv_draw_rect_dsc_t rect_dsc;
     init_rect_dsc(&rect_dsc, LVGL_FOREGROUND);
@@ -57,7 +59,7 @@ static void draw_active_profile(lv_obj_t *canvas,
     coords.x2 = coords.x1 + 3 - 1; // Ancho 3
     coords.y2 = coords.y1 + 3 - 1; // Alto 3
 
-    lv_draw_rect(layer, &rect_dsc, &coords);
+    lv_draw_rect(&layer, &rect_dsc, &coords);
 }
 
 // MC: mejor implementación
@@ -74,7 +76,8 @@ static void draw_active_profile_text(lv_obj_t *canvas,
 
   // lv_canvas_draw_text(canvas, 25, 32, 35, &label_dsc, text);
 
-  lv_layer_t *layer = lv_canvas_get_layer(canvas);
+  lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
     // Configurar estilo del texto
     lv_draw_label_dsc_t label_dsc;
@@ -93,7 +96,7 @@ static void draw_active_profile_text(lv_obj_t *canvas,
     coords.x2 = 25 + 35; // Ancho límite original
     coords.y2 = 32 + 20; // Altura estimada
 
-    lv_draw_label(layer, &label_dsc, &coords);
+    lv_draw_label(&layer, &label_dsc, &coords);
 }
 
 void draw_profile_status(lv_obj_t *canvas, const struct status_state *state) {
