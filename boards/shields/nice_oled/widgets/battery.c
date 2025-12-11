@@ -225,7 +225,7 @@ static void draw_charging_level(lv_obj_t *canvas, const struct status_state *sta
     img_coords.x2 = 25 + bolt.header.w - 1;
     img_coords.y2 = 50 + bolt.header.h - 1;
 
-    lv_draw_image(layer, &img_dsc, &img_coords);
+    lv_draw_image(&layer, &img_dsc, &img_coords);
 }
 
 void draw_battery_status(lv_obj_t *canvas, const struct status_state *state) {
