@@ -6,9 +6,10 @@
 #include <lvgl.h>
 #include <zephyr/kernel.h>
 
+struct zmk_widget_screen {
   sys_snode_t node;
   lv_obj_t *obj;
-  uint8_t cbuf[LV_CANVAS_BUF_SIZE(CANVAS_WIDTH, CANVAS_HEIGHT, 1, LV_COLOR_FORMAT_I1)];
+  lv_color_t cbuf[CANVAS_HEIGHT * CANVAS_HEIGHT];
   struct status_state state;
 };
 
