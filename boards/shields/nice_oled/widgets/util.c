@@ -1,9 +1,10 @@
 #include "util.h"
 #include <ctype.h>
-#include <zephyr/kernel.h>
-#include <string.h>
 #include <lvgl.h>
 #include <stdlib.h>
+#include <string.h>
+#include <zephyr/kernel.h>
+
 
 void to_uppercase(char *str) {
   for (int i = 0; str[i] != '\0'; i++) {
@@ -11,16 +12,16 @@ void to_uppercase(char *str) {
   }
 }
 
-void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
-  //static lv_color_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT];
+void rotate_canvas(lv_obj_t *canvas, uint8_t cbuf[]) {
+  // static lv_color_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT];
   static uint8_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT / 8];
-  //memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
+  // memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
   memset(cbuf_tmp, 0, sizeof(cbuf_tmp));
 
   size_t src_size = (CANVAS_WIDTH * CANVAS_HEIGHT) / 8;
-    if (src_size > sizeof(cbuf_tmp)) {
-        src_size = sizeof(cbuf_tmp);
-    }
+  if (src_size > sizeof(cbuf_tmp)) {
+    src_size = sizeof(cbuf_tmp);
+  }
 
   memcpy(cbuf_tmp, cbuf, src_size);
 
@@ -33,7 +34,7 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
   img.header.w = CANVAS_WIDTH;
   img.header.h = CANVAS_HEIGHT;
   img.header.stride = (CANVAS_HEIGHT + 7) / 8; // Stride en bytes para 1 bit
-  //img.header.stride = CANVAS_HEIGHT * sizeof(lv_color_t); 
+  // img.header.stride = CANVAS_HEIGHT * sizeof(lv_color_t);
   img.header.reserved_2 = 0;
 
   // lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
@@ -55,7 +56,7 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
   lv_draw_image_dsc_init(&draw_dsc);
   draw_dsc.src = &img;
   draw_dsc.rotation = 900; // 90.0 grados
-    
+
   // Punto de pivote (centro)
   draw_dsc.pivot.x = CANVAS_HEIGHT / 2;
   draw_dsc.pivot.y = CANVAS_HEIGHT / 2;
@@ -78,19 +79,19 @@ void draw_background(lv_obj_t *canvas) {
   //                     &rect_black_dsc);
 
   // LVGL 9: No usamos lv_canvas_draw_rect, usamos lv_draw_rect sobre la capa
-    lv_layer_t layer;
-    lv_canvas_init_layer(canvas, &layer);
+  lv_layer_t layer;
+  lv_canvas_init_layer(canvas, &layer);
 
-    lv_draw_rect_dsc_t rect_black_dsc;
-    init_rect_dsc(&rect_black_dsc, lv_color_black()); // Usar helper de color
+  lv_draw_rect_dsc_t rect_black_dsc;
+  init_rect_dsc(&rect_black_dsc, lv_color_black()); // Usar helper de color
 
-    lv_area_t coords;
-    coords.x1 = 0;
-    coords.y1 = 0;
-    coords.x2 = CANVAS_WIDTH - 1;  // Importante restar 1
-    coords.y2 = CANVAS_HEIGHT - 1;
+  lv_area_t coords;
+  coords.x1 = 0;
+  coords.y1 = 0;
+  coords.x2 = CANVAS_WIDTH - 1; // Importante restar 1
+  coords.y2 = CANVAS_HEIGHT - 1;
 
-    lv_draw_rect(&layer, &rect_black_dsc, &coords);
+  lv_draw_rect(&layer, &rect_black_dsc, &coords);
 }
 
 void init_label_dsc(lv_draw_label_dsc_t *label_dsc, lv_color_t color,
