@@ -238,8 +238,10 @@ int zmk_widget_screen_init(struct zmk_widget_screen *widget, lv_obj_t *parent) {
                        LV_COLOR_FORMAT_I1);
 
   /* Initialize palette for I1 format */
-  lv_canvas_set_palette(canvas, 0, lv_color_make(0x00, 0x00, 0x00)); /* Black */
-  lv_canvas_set_palette(canvas, 1, lv_color_make(0xFF, 0xFF, 0xFF)); /* White */
+  lv_canvas_set_palette(canvas, 0,
+                        lv_color32_make(0x00, 0x00, 0x00, 0xFF)); /* Black */
+  lv_canvas_set_palette(canvas, 1,
+                        lv_color32_make(0xFF, 0xFF, 0xFF, 0xFF)); /* White */
 
   sys_slist_append(&widgets, &widget->node);
   widget_battery_status_init();
