@@ -16,16 +16,16 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/event_manager.h>
 #include <zmk/events/hid_indicators_changed.h>
 
-
 #define LED_NLCK 0x01
 #define LED_CLCK 0x02
 #define LED_SLCK 0x04
 
-// --- CORRECCIÓN LVGL 9: USAR LV_IMAGE_DECLARE ---
-LV_IMAGE_DECLARE(dog_bark1_90);
-LV_IMAGE_DECLARE(dog_bark2_90);
+// --- CORRECCIÓN COMPATIBILIDAD: USAR LV_IMG_DECLARE ---
+// wpm.c usa LV_IMG_DECLARE, así que hacemos lo mismo aquí para evitar errores.
+LV_IMG_DECLARE(dog_bark1_90);
+LV_IMG_DECLARE(dog_bark2_90);
 
-const lv_image_dsc_t *luna_imgs_bark_90[] = {&dog_bark1_90, &dog_bark2_90};
+const void *luna_imgs_bark_90[] = {&dog_bark1_90, &dog_bark2_90};
 static lv_obj_t *hid_anim = NULL;
 
 struct hid_indicators_state {
@@ -48,7 +48,7 @@ static void set_hid_indicators(lv_obj_t *label,
       hid_anim = lv_animimg_create(label);
       lv_obj_center(hid_anim);
 
-      // Casting correcto para LVGL 9
+      // Casting para evitar warnings
       lv_animimg_set_src(hid_anim, (const void **)luna_imgs_bark_90, 2);
       lv_animimg_set_duration(
           hid_anim, CONFIG_NICE_OLED_WIDGET_HID_INDICATORS_LUNA_ANIMATION_MS);
