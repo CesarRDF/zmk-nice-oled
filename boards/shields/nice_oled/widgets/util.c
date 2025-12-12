@@ -5,7 +5,6 @@
 #include <string.h>
 #include <zephyr/kernel.h>
 
-
 void to_uppercase(char *str) {
   for (int i = 0; str[i] != '\0'; i++) {
     str[i] = toupper(str[i]);
@@ -33,8 +32,7 @@ void rotate_canvas(lv_obj_t *canvas, uint8_t cbuf[]) {
 
   img.header.w = CANVAS_WIDTH;
   img.header.h = CANVAS_HEIGHT;
-  img.header.stride = (CANVAS_HEIGHT + 7) / 8; // Stride en bytes para 1 bit
-  // img.header.stride = CANVAS_HEIGHT * sizeof(lv_color_t);
+  img.header.stride = (CANVAS_WIDTH + 7) / 8; // Correct stride for 1-bit width
   img.header.reserved_2 = 0;
 
   // lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
