@@ -1,3 +1,26 @@
+/*
+ * Copyright (c) 2024 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <zephyr/bluetooth/services/bas.h>
+#include <zephyr/kernel.h>
+#include <zephyr/logging/log.h>
+
+LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
+
+#include "hid_indicators.h"
+#include <lvgl.h>
+#include <zmk/display.h>
+#include <zmk/event_manager.h>
+#include <zmk/events/hid_indicators_changed.h>
+
+
+#define LED_NLCK 0x01
+#define LED_CLCK 0x02
+#define LED_SLCK 0x04
+
 // --- CORRECCIÓN LVGL 9: USAR LV_IMAGE_DECLARE ---
 LV_IMAGE_DECLARE(dog_bark1_90);
 LV_IMAGE_DECLARE(dog_bark2_90);
