@@ -13,11 +13,12 @@ void to_uppercase(char *str) {
 
 void rotate_canvas(lv_obj_t *canvas, uint8_t cbuf[]) {
   // static lv_color_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT];
-  static uint8_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT / 8];
+  // static lv_color_t cbuf_tmp[CANVAS_HEIGHT * CANVAS_HEIGHT];
+  static uint8_t cbuf_tmp[(CANVAS_HEIGHT * CANVAS_HEIGHT / 8) + 8];
   // memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
   memset(cbuf_tmp, 0, sizeof(cbuf_tmp));
 
-  size_t src_size = (CANVAS_WIDTH * CANVAS_HEIGHT) / 8;
+  size_t src_size = (CANVAS_WIDTH * CANVAS_HEIGHT) / 8 + 8;
   if (src_size > sizeof(cbuf_tmp)) {
     src_size = sizeof(cbuf_tmp);
   }
