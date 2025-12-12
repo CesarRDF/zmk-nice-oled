@@ -3,6 +3,7 @@
 #include <zephyr/kernel.h>
 #include <string.h>
 #include <lvgl.h>
+#include <stdlib.h>
 
 void to_uppercase(char *str) {
   for (int i = 0; str[i] != '\0'; i++) {
@@ -16,7 +17,10 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
   //memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
   memset(cbuf_tmp, 0, sizeof(cbuf_tmp));
 
-  if (src_size > sizeof(cbuf_tmp)) src_size = sizeof(cbuf_tmp);
+  size_t src_size = (CANVAS_WIDTH * CANVAS_HEIGHT) / 8;
+    if (src_size > sizeof(cbuf_tmp)) {
+        src_size = sizeof(cbuf_tmp);
+    }
 
   memcpy(cbuf_tmp, cbuf, src_size);
 
@@ -26,7 +30,7 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]) {
 
   img.header.flags = 0;
 
-  img.header.w = CANVAS_HEIGHT;
+  img.header.w = CANVAS_WIDTH;
   img.header.h = CANVAS_HEIGHT;
   img.header.stride = (CANVAS_HEIGHT + 7) / 8; // Stride en bytes para 1 bit
   //img.header.stride = CANVAS_HEIGHT * sizeof(lv_color_t); 

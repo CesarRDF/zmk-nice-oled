@@ -197,7 +197,7 @@ static void draw_image_on_canvas(lv_obj_t *canvas, const lv_image_dsc_t *img_src
 
 static void draw_gauge(lv_obj_t *canvas, const struct status_state *state) {
     // Reemplaza lv_canvas_draw_img
-    draw_image_on_canvas(&canvas, &gauge, 0, 70);
+    draw_image_on_canvas(canvas, &gauge, 0, 70);
 }
 
 static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
@@ -232,7 +232,8 @@ static void draw_needle(lv_obj_t *canvas, const struct status_state *state) {
 
     float radius = 25.45585;
     float angleDeg = 225 + ((float)value / max) * 90;
-    float angleRad = angleDeg * (3.14159 / 180.0f);
+    // float angleRad = angleDeg * (3.14159 / 180.0f); // Simplificamos para evitar warnings de float
+    float angleRad = angleDeg * 0.017453;
 
     // Calcular puntos
     line_dsc.p1.x = centerX + (int)(offset * cos(angleRad));
