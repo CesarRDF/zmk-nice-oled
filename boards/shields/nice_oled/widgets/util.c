@@ -43,6 +43,8 @@ void rotate_canvas(lv_obj_t *canvas, uint8_t cbuf[]) {
   img.data_size = sizeof(cbuf_tmp);
 
   // 3. Limpiar el canvas actual
+  lv_canvas_set_buffer(canvas, cbuf, CANVAS_HEIGHT, CANVAS_WIDTH,
+                       LV_COLOR_FORMAT_I1);
   lv_canvas_fill_bg(canvas, lv_color_hex(0x000000), LV_OPA_COVER);
 
   // 4. Obtener la capa del canvas para dibujar (LVGL 9 way)

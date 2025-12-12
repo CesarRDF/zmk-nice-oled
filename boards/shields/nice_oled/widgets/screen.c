@@ -63,6 +63,9 @@ static void draw_canvas(lv_obj_t *widget, uint8_t cbuf[],
                         const struct status_state *state) {
   lv_obj_t *canvas = lv_obj_get_child(widget, 0);
 
+  lv_canvas_set_buffer(canvas, cbuf, CANVAS_WIDTH, CANVAS_HEIGHT,
+                       LV_COLOR_FORMAT_I1);
+
   // Draw widgets
   draw_background(canvas);
   draw_output_status(canvas, state);
